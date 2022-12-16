@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import homefulLogo from "../images/homefulLogo.svg";
 import styles from "../sass/createacc.module.scss";
 
 const PersonalDetails = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleNext = () => {
+    navigate("/buildfeed");
+  }
 
   useEffect(() => {
     setEmail(location.state.email);
@@ -41,7 +46,7 @@ const PersonalDetails = () => {
         <input type="checkbox" />
         <div className={styles.checkBoxFont}>Parent</div>
       </div>
-      <button>Next</button>
+      <button onClick={handleNext}>Next</button>
     </div>
   );
 };
