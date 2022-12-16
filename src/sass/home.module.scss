@@ -1,0 +1,118 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.exploreContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 135px;
+    width: 100%;
+    background-color: #ECE8E2;
+    font-family: "SF-Pro-Rounded";
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 30.5px;
+}
+
+.padding {
+    padding: 0 20px
+}
+
+
+.subContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 45px 20px;
+}
+
+.subContainer2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #ECE8E2;
+    padding: 45px 20px;
+}
+
+.invertContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #29540E;
+    padding: 50px 0;
+}
+
+.invertSubtitle {
+    font-family: "SF-Pro-Rounded";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.19px;
+    color: #E1EBD0;
+    padding: 40px 0;
+}
+
+.invertFont {
+    font-family: "SF-Pro-Rounded";
+    font-size: 18px;
+    font-weight: 510;
+    line-height: 21.48px;
+    color: #E1EBD0;
+    padding: 0 0 40px 0;
+}
+
+.subTitle {
+    font-family: "SF-Pro-Rounded";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.19px;
+    color: #29540E;
+}
+
+.subText {
+    font-family: "SF-Pro-Rounded";
+    font-size: 18px;
+    line-height: 21.48px;
+    font-weight: 400;
+    padding: 45px 0 0 0;
+}
+
+.subTextBold {
+    font-family: "SF-Pro-Rounded";
+    font-size: 18px;
+    line-height: 21.48px;
+    font-weight: 600;
+    padding: 45px 0 0 0;
+}
+
+.button1 {
+    background-color: #97b05d;
+    color: #093045;
+    font-family: "SF-Pro-Rounded";
+    font-size: 16px;
+    font-weight: 700;
+    width: 388px;
+    height: 52px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: #E1EBD0;
+    color: #204219;
+    font-family: "SF-Pro-Rounded";
+    font-size: 16px;
+    font-weight: 700;
+    width: 388px;
+    height: 52px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}

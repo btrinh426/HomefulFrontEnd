@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    background-color: #ECE8E2;
+}
+
+.greenFont {
+    font-family: "SF-Pro-Rounded";
+    font-size: 24px;
+    line-height: 33.6px;
+    font-weight: 700;
+    color: #29540E;
+}
+
+.smallGreenFont {
+    font-family: "SF-Pro-Rounded";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+}
+
+.regularFont {
+    font-family: "SF-Pro-Rounded";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18.16px;
+}
+
+.smallFont {
+    font-family: "SF-Pro-Rounded";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+}
+
+.checkBoxFont {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.checkBoxContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
