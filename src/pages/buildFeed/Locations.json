@@ -1,0 +1,28 @@
+[
+    {
+        "city": "Garden Grove",
+        "zipCode": 92844,
+        "state": "CA"
+    },
+    {
+        "city": "Tustin",
+        "zipCode": 92606,
+        "state": "CA"
+    },
+    {
+        "city": "Costa Mesa",
+        "zipCode": 92626,
+        "state": "CA"
+    },
+    {
+        "city": "Fullerton",
+        "zipCode": 90621,
+        "state": "CA"
+    },
+    {
+        "city": "Santa Ana",
+        "zipCode": 92701,
+        "state": "CA"
+    }
+
+]

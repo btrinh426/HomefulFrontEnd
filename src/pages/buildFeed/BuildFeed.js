@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useFormik } from "formik";
+import { useLocation } from "react-router-dom";
 import Position from "./Position";
 import AreaChoice from "./AreaChoice";
 import IdealArea from "./IdealArea";
 import styles from "../../sass/createacc.module.scss";
 
 const BuildFeed = () => {
+  const location = useLocation();
+  const profileData = location.state.profile;
+
+  const [profile, setProfile] = useState({});
+
+  useEffect(() => {
+    setProfile(profileData);
+  }, [profileData]);
+
   const [onPositionTab, setOnPositionTab] = useState(true);
   const [onAreaChoiceTab, setOnAreaChoiceTab] = useState(false);
   const [onIdealAreaTab, setOnIdealAreaTab] = useState(false);
@@ -20,6 +31,8 @@ const BuildFeed = () => {
     "movingAbroad",
     "currentResident",
   ]);
+
+  const [areaChoices, setAreaChoices] = useState(() => {});
 
   return (
     <div className={styles.container}>
@@ -77,7 +90,7 @@ const BuildFeed = () => {
         ) : (
           ""
         )}
-        {onIdealAreaContent ? <IdealArea /> : ""}
+        {onIdealAreaContent ? <IdealArea profile={profile} /> : ""}
       </div>
     </div>
   );

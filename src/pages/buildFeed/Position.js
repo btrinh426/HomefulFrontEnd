@@ -10,14 +10,6 @@ const Position = ({
   setPositionChoices,
   positionChoices,
 }) => {
-  // const [formats, setFormats] = useState(() => [
-  //   "buy",
-  //   "rent",
-  //   "firstTimeMove",
-  //   "movingAbroad",
-  //   "currentResident",
-  // ]);
-
   const handleNext = () => {
     setOnAreaChoiceTab(true);
     setOnPositionContent(false);
