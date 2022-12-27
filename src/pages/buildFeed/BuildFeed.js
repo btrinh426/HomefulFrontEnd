@@ -32,7 +32,20 @@ const BuildFeed = () => {
     "currentResident",
   ]);
 
-  const [areaChoices, setAreaChoices] = useState(() => {});
+  const [areaChoices, setAreaChoices] = useState({});
+
+  const [idealAreaChoices, setIdealAreaChoices] = useState(() => [
+    "safety",
+    "kidFriendly",
+    "jobOpportunites",
+    "petFriendly",
+    "affordability",
+    "easyCommute",
+    "outdoorActivites",
+    "goodSchools",
+    "qualityOfLife",
+    "sizeOfCity",
+  ]);
 
   return (
     <div className={styles.container}>
@@ -86,11 +99,16 @@ const BuildFeed = () => {
             setOnAreaChoiceContent={setOnAreaChoiceContent}
             setOnIdealAreaTab={setOnIdealAreaTab}
             setOnIdealAreaContent={setOnIdealAreaContent}
+            setAreaChoices={setAreaChoices}
           />
         ) : (
           ""
         )}
-        {onIdealAreaContent ? <IdealArea profile={profile} /> : ""}
+        {onIdealAreaContent ? (
+          <IdealArea setIdealAreaChoices={setIdealAreaChoices} />
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

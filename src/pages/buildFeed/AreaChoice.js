@@ -6,8 +6,10 @@ const AreaChoice = ({
   setOnAreaChoiceContent,
   setOnIdealAreaTab,
   setOnIdealAreaContent,
+  setAreaChoices,
 }) => {
   const [search, setSearch] = useState("");
+  const [filterResults, setFilterResults] = useState([]);
 
   const handleNext = () => {
     setOnAreaChoiceContent(false);
@@ -16,7 +18,24 @@ const AreaChoice = ({
   };
 
   const handleSearchChange = (e) => {
+    const results = Locations.filter((cities) => {
+      if (e.target.value === "") {
+        return cities;
+      } else {
+        return cities.city.toLowerCase().includes(e.target.value.toLowerCase());
+      }
+    });
+    setFilterResults(results);
     setSearch(e.target.value);
+  };
+
+  const handleCityClick = (e) => {
+    console.log(filterResults);
+    console.log(e.target.id);
+    const city = filterResults.filter((data) => {
+      return data.zipCode.toString() === e.target.id;
+    });
+    setAreaChoices(city);
   };
 
   const handleSubmit = () => {
@@ -27,6 +46,7 @@ const AreaChoice = ({
 
   return (
     <>
+      <div className={styles.blackFont20}>Where are you looking to move?</div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -35,13 +55,19 @@ const AreaChoice = ({
           value={search}
         />
         <div>
-          {Locations.map((location, key) => {
-            return (
-              <div key={location.zipCode}>
-                {location.city}, {location.state}
-              </div>
-            );
-          })}
+          {search === ""
+            ? ""
+            : filterResults.map((cities) => {
+                return (
+                  <div
+                    key={cities.zipCode}
+                    id={cities.zipCode}
+                    onClick={handleCityClick}
+                  >
+                    {cities.city}, {cities.state}
+                  </div>
+                );
+              })}
         </div>
       </form>
       <button onClick={handleNext}>Next</button>
