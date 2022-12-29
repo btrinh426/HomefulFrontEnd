@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useFormik, FormikProvider, Field } from "formik";
 import homefulLogo from "../images/homefulLogo.svg";
 import styles from "../sass/createacc.module.scss";
-import { listItemSecondaryActionClasses } from "@mui/material";
 
 const PersonalDetails = () => {
   const location = useLocation();

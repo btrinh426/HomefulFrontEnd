@@ -2,18 +2,38 @@ import React, { useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import styles from "../../sass/createacc.module.scss";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const IdealArea = ({
-  setOnAreaChoiceTab,
-  setOnPositionContent,
-  setOnAreaChoiceContent,
   setIdealAreaChoices,
+  profile,
+  positionChoices,
+  areaChoices,
   idealAreaChoices,
 }) => {
-  const handleNext = () => {
-    setOnAreaChoiceTab(true);
-    setOnPositionContent(false);
-    setOnAreaChoiceContent(true);
+  const navigate = useNavigate();
+  const [finalProfile, setFinalProfile] = useState({});
+
+  const combineProfileInfo = async () => {
+    await setFinalProfile({
+      profile: profile,
+      position: positionChoices,
+      areaOfChoice: areaChoices,
+      idealArea: idealAreaChoices,
+    });
+  };
+
+  const handleSubmit = () => {
+    combineProfileInfo().then(() =>
+      axios({
+        method: "post",
+        url: "https://localhost:7108/api/Profiles",
+        data: finalProfile,
+      })
+    );
+
+    console.log("create account, successful");
   };
 
   const handleFormat = (event, newFormats) => {
@@ -65,7 +85,7 @@ const IdealArea = ({
         </ToggleButton>
       </ToggleButtonGroup>
       <div>Skip for now</div>
-      <button onClick={handleNext}>Next</button>
+      <button onClick={handleSubmit}>Submit</button>
     </>
   );
 };

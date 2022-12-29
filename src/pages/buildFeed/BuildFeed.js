@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useFormik } from "formik";
 import { useLocation } from "react-router-dom";
 import Position from "./Position";
 import AreaChoice from "./AreaChoice";
@@ -16,7 +15,6 @@ const BuildFeed = () => {
     setProfile(profileData);
   }, [profileData]);
 
-  const [onPositionTab, setOnPositionTab] = useState(true);
   const [onAreaChoiceTab, setOnAreaChoiceTab] = useState(false);
   const [onIdealAreaTab, setOnIdealAreaTab] = useState(false);
 
@@ -105,7 +103,13 @@ const BuildFeed = () => {
           ""
         )}
         {onIdealAreaContent ? (
-          <IdealArea setIdealAreaChoices={setIdealAreaChoices} />
+          <IdealArea
+            setIdealAreaChoices={setIdealAreaChoices}
+            profile={profile}
+            positionChoices={positionChoices}
+            areaChoices={areaChoices}
+            idealAreaChoices={idealAreaChoices}
+          />
         ) : (
           ""
         )}
