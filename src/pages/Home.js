@@ -15,7 +15,7 @@ const Home = () => {
     <div className={styles.wrapper}>
       <NavBar />
       <img src={HeroImage} alt="" />
-      <div className={styles.exploreContainer}>
+      <div className={styles.tanContainer}>
         EXPLORE PLACES THAT WOULD MAKE YOU HAPPY
       </div>
       <div className={styles.subContainer}>

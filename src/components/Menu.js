@@ -13,6 +13,10 @@ const Menu = () => {
     navigate("/createaccount");
   };
 
+  const handleBestFamilyClick = () => {
+    navigate("/bestforfamily");
+  }
+
   const handlePlacesToLive = () => {
     if (placesToLiveOpen === false) {
       setPlacesToLiveOpen(true);
@@ -59,7 +63,7 @@ const Menu = () => {
             <div className={styles.regularFont}>
               BEST FOR YOUNG PROFESSIONALS
             </div>
-            <div className={styles.regularFont}>BEST FOR FAMILIES</div>
+            <div className={styles.regularFont} onClick={handleBestFamilyClick}>BEST FOR FAMILIES</div>
             <div className={styles.regularFont}>MOST PET-FRIENDLY</div>
             <div className={styles.regularFont}>BEST TO BUY A HOUSE</div>
             <div className={styles.regularFont}>HEALTH & OUTDOORS</div>

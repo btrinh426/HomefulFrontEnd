@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "../sass/createacc.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
@@ -16,6 +16,10 @@ const validate = (values) => {
 };
 
 const EmailForm = () => {
+
+  const emailInputRef = useRef();
+  const passwordInputRef = useRef();
+
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const formik = useFormik({
@@ -25,7 +29,10 @@ const EmailForm = () => {
     },
     validate,
     onSubmit: (values) => {
-      const profile = values;
+      const profile = {
+        email: values.email,
+        password: passwordInputRef.current
+      };
       if (profile.email && profile.password) {
         navigate("/personaldetails", { state: { profile } });
         console.log(profile, "profile state");
@@ -50,6 +57,7 @@ const EmailForm = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.email}
+          ref={emailInputRef}
         />
         {formik.touched.email && formik.errors.email && (
           <span>{formik.errors.email}</span>
@@ -59,9 +67,10 @@ const EmailForm = () => {
           name="password"
           id="password"
           placeholder="Password"
-          onChange={formik.handleChange}
+          // onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.password}
+          // value={formik.values.password}
+          ref={passwordInputRef}
         />
         <button type="button" onClick={handleShowPassword}>
           Show Password

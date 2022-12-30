@@ -42,11 +42,9 @@ const AreaChoice = ({
     console.log("submitted");
   };
 
-  useEffect(() => {});
-
   return (
     <>
-      <div className={styles.blackFont20}>Where are you looking to move?</div>
+      {/* <div className={styles.blackFont20}>Where are you looking to move?</div> */}
       <form onSubmit={handleSubmit}>
         <input
           type="text"

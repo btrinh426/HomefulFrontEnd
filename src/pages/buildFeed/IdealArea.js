@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import styles from "../../sass/createacc.module.scss";
@@ -13,7 +13,7 @@ const IdealArea = ({
   idealAreaChoices,
 }) => {
   const navigate = useNavigate();
-  const [finalProfile, setFinalProfile] = useState({});
+  const [finalProfile, setFinalProfile] = useRef({});
 
   const combineProfileInfo = async () => {
     await setFinalProfile({
