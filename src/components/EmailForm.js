@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import styles from "../sass/createacc.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
+import axios from "axios";
 
 const validate = (values) => {
   const errors = {};
@@ -16,9 +17,10 @@ const validate = (values) => {
 };
 
 const EmailForm = () => {
-
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+
+  const url = window.location.pathname;
 
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -31,13 +33,22 @@ const EmailForm = () => {
     onSubmit: (values) => {
       const profile = {
         email: values.email,
-        password: passwordInputRef.current
+        password: values.password,
       };
-      if (profile.email && profile.password) {
-        navigate("/personaldetails", { state: { profile } });
-        console.log(profile, "profile state");
-      } else {
-        console.log("email and password required");
+      switch (url) {
+        case "/createaccount":
+          if (profile.email && profile.password && url === "/createaccount") {
+            navigate("/personaldetails", { state: { profile } });
+            console.log(profile, "profile state");
+          } else {
+            console.log("email and password required");
+          }
+          break;
+        case "/login":
+          console.log("login");
+          break;
+        default:
+          return "default";
       }
     },
   });
@@ -67,9 +78,9 @@ const EmailForm = () => {
           name="password"
           id="password"
           placeholder="Password"
-          // onChange={formik.handleChange}
+          onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          // value={formik.values.password}
+          value={formik.values.password}
           ref={passwordInputRef}
         />
         <button type="button" onClick={handleShowPassword}>
@@ -83,7 +94,9 @@ const EmailForm = () => {
             regarding account notifications and area recommendations.
           </div>
         </div>
-        <button type="submit">Submit</button>
+        <button className={styles.continueButton} type="submit">
+          Continue
+        </button>
       </div>
     </form>
   );

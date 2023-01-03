@@ -1,8 +1,13 @@
+// Hooks //
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+
+// Components //
 import Position from "./Position";
 import AreaChoice from "./AreaChoice";
 import IdealArea from "./IdealArea";
+
+// SASS/STYLING //
 import styles from "../../sass/createacc.module.scss";
 
 const BuildFeed = () => {
@@ -18,10 +23,12 @@ const BuildFeed = () => {
   const [onAreaChoiceTab, setOnAreaChoiceTab] = useState(false);
   const [onIdealAreaTab, setOnIdealAreaTab] = useState(false);
 
+  // STATE USED TO CONDITIONALLY RENDER BUILD FEED CONTENT //
   const [onPositionContent, setOnPositionContent] = useState(true);
   const [onAreaChoiceContent, setOnAreaChoiceContent] = useState(false);
   const [onIdealAreaContent, setOnIdealAreaContent] = useState(false);
 
+  // STATE FOR EACH CONDITIONALLY RENDERED COMPONENT
   const [positionChoices, setPositionChoices] = useState(() => [
     "buy",
     "rent",

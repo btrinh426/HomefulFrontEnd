@@ -1,9 +1,10 @@
 import Home from "./pages/Home";
 import About from "./pages/About";
 import CreateAcc from "./pages/CreateAcc";
+import Login from "./pages/Login";
 import PersonalDetails from "./pages/PersonalDetails";
 import BuildFeed from "./pages/buildFeed/BuildFeed";
-import BestForFamily from "./pages/BestForFamily"
+import BestForFamily from "./pages/BestForFamily";
 import styles from "./sass/wrapper.module.scss";
 import { Routes, Route } from "react-router-dom";
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/createaccount" element={<CreateAcc />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/personaldetails" element={<PersonalDetails />} />
           <Route path="/buildfeed" element={<BuildFeed />} />
           <Route path="/bestforfamily" element={<BestForFamily />} />

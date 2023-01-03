@@ -138,6 +138,30 @@
     background-color: #204219;
 }
 
-.unselectedButton {
+.continueButton {
+    width: 388px;
+    height: 52px;
+    border-radius: 7px;
+    border: none;
+    background-color: #97B05D;
+    font-family: "SF-Pro-Rounded";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #093045;
+    cursor: pointer;
+}
 
+.orContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.hLine {
+    background-color: black;
+    width: 168px;
+    height: 1px;
+    margin: 12px;
 }

@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import Locations from "../pages/buildFeed/Locations.json";
 import styles from "../sass/createacc.module.scss";
 
-const CitySearchBar = ({
-
-}) => {
+const CitySearchBar = () => {
   const [search, setSearch] = useState("");
   const [filterResults, setFilterResults] = useState([]);
 
