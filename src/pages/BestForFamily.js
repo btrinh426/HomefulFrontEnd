@@ -8,20 +8,23 @@ import FilterMapButton from "../images/icons/FilterMapButton.svg";
 
 const BestForFamily = () => {
   return (
-  <div className={styles.wrapper}>
-    <CitySearchBar />
-    <div className={styles.lightGreenContainer}>
+    <div className={styles.wrapper}>
+      <CitySearchBar />
+      <div className={styles.lightGreenContainer}>
         <div className={font.greenFont}>Best For Families to Live</div>
-        <div className={font.smallFont} style={{ fontStyle: "italic" }}>Select up to 3.</div>
+        <div className={font.smallFont} style={{ fontStyle: "italic" }}>
+          Select up to 3.
+        </div>
         <div className={styles.mapButtonContainer}>
-            <img src={ViewMapButton} alt="" />
-            <img src={FilterMapButton} alt="" />
+          <img src={ViewMapButton} alt="" />
+          <img src={FilterMapButton} alt="" />
         </div>
         <div className={styles.locationCardContainer}>
-            <LocationCard />
+          <LocationCard />
         </div>
+      </div>
     </div>
-  </div>);
+  );
 };
 
 export default BestForFamily;
