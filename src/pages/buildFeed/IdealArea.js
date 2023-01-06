@@ -30,7 +30,6 @@ const IdealArea = ({
         data: finalProfile,
       })
     );
-
     console.log("create account, successful");
   };
 
