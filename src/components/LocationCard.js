@@ -1,14 +1,21 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import gradeImg from "../images/icons/gradeImg.svg";
 import LikeButton from "../images/buttons/LikeButton.svg";
 import { Rating } from "@mui/material";
 import styles from "../sass/locationcard.module.scss";
 
-const LocationCard = ({ city }) => {
+const LocationCard = ({ city, id }) => {
   const [liked, setLiked] = useState(true);
 
   const handleReview = () => {
     console.log("clicked review");
+  };
+
+  const navigate = useNavigate();
+
+  const handleLocationCard = (id) => {
+    navigate(`/areainfo/${id}`);
   };
 
   const handleLike = async () => {
@@ -22,7 +29,12 @@ const LocationCard = ({ city }) => {
   };
 
   return (
-    <div className={styles.locationCardContainer}>
+    <div
+      className={styles.locationCardContainer}
+      onClick={() => {
+        handleLocationCard(id);
+      }}
+    >
       <div className={styles.locationCard}>
         <div className={styles.titleContainer}>
           <div className={styles.bigFont}>{city.name}</div>
