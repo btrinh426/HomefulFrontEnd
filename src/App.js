@@ -1,6 +1,7 @@
 import Home from "./pages/Home";
 import About from "./pages/About";
 import CreateAcc from "./pages/CreateAcc";
+import AreaInfo from "./pages/AreaInfo";
 import Login from "./pages/Login";
 import PersonalDetails from "./pages/PersonalDetails";
 import BuildFeed from "./pages/buildFeed/BuildFeed";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/personaldetails" element={<PersonalDetails />} />
           <Route path="/buildfeed" element={<BuildFeed />} />
           <Route path="/bestforfamily" element={<BestForFamily />} />
+          <Route path="/areainfo/:id" element={<AreaInfo />} />
         </Routes>
       </div>
     </div>

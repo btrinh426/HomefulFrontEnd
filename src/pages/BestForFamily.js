@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NavBar from "../components/NavBar";
 import CitySearchBar from "../components/CitySearchBar";
 import LocationCard from "../components/LocationCard";
 import styles from "../sass/home.module.scss";
@@ -10,6 +11,7 @@ import FilterMapButton from "../images/icons/FilterMapButton.svg";
 const BestForFamily = () => {
   return (
     <div className={styles.wrapper}>
+      <NavBar />
       <CitySearchBar />
       <div className={styles.lightGreenContainer}>
         <div className={font.greenFont}>Best For Families to Live</div>
@@ -23,7 +25,7 @@ const BestForFamily = () => {
       </div>
       <div className={styles.locationCardContainer}>
         {city.map((city) => {
-          return <LocationCard city={city} key={city.id} />;
+          return <LocationCard city={city} key={city.id} id={city.id} />;
         })}
       </div>
     </div>
