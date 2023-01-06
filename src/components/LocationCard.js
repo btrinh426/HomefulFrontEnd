@@ -1,27 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import gradeImg from "../images/icons/gradeImg.svg";
 import LikeButton from "../images/buttons/LikeButton.svg";
 import { Rating } from "@mui/material";
 import styles from "../sass/locationcard.module.scss";
 
-const LocationCard = () => {
+const LocationCard = ({ city }) => {
+  const [liked, setLiked] = useState(true);
+
   const handleReview = () => {
     console.log("clicked review");
   };
+
+  const handleLike = async () => {
+    const isLiked = await setLiked(!liked);
+    if (liked) {
+      console.log("liked");
+    } else {
+      console.log("unliked");
+    }
+    return isLiked;
+  };
+
   return (
     <div className={styles.locationCardContainer}>
       <div className={styles.locationCard}>
         <div className={styles.titleContainer}>
-          <div className={styles.bigFont}>Westpark</div>
-          <div className={styles.medFont}>Neighborhood in Irvine, CA</div>
-          <div className={styles.greenFont}>#1 FOR FAMILIES</div>
+          <div className={styles.bigFont}>{city.name}</div>
+          <div className={styles.medFont}>{city.subTitle}</div>
+          <div className={styles.greenFont}>{city.rank}</div>
         </div>
         <div className={styles.contentContainer}>
           <div className={styles.content}>
-            <span>Parent:</span> Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Scelerisque mauris pellentesque pulvinar
-            pellentesque habitant.
+            {city.user}: {city.content}
           </div>
           <div className={styles.gradeContainer}>
             <div className={styles.gradeContent}>
@@ -41,11 +51,16 @@ const LocationCard = () => {
             </div>
           </div>
           <div className={styles.footerContainer}>
-            <Rating color="black" size="small" value={4} readOnly />
+            <Rating color="black" size="small" value={city.stars} readOnly />
             <div className={styles.medFont} onClick={handleReview}>
-              <u>Read 68 reviews</u>
+              <u>Read {city.numOfReviews} reviews</u>
             </div>
-            <img src={LikeButton} alt="like button" />
+            <img
+              className={styles.likeButton}
+              src={LikeButton}
+              alt="like button"
+              onClick={handleLike}
+            />
           </div>
         </div>
       </div>
