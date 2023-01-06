@@ -6,6 +6,9 @@
     width: 367px;
     height: 288px;
     padding: 25px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    background-color: #F9F5F2;
 }
 
 .titleContainer {
@@ -67,4 +70,12 @@
     font-size: 16px;
     line-height: 18px;
     font-weight: 400;
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }

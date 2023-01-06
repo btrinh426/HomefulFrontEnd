@@ -19,9 +19,9 @@ const BestForFamily = () => {
           <img src={ViewMapButton} alt="" />
           <img src={FilterMapButton} alt="" />
         </div>
-        <div className={styles.locationCardContainer}>
-          <LocationCard />
-        </div>
+      </div>
+      <div className={styles.locationCardContainer}>
+        <LocationCard />
       </div>
     </div>
   );
