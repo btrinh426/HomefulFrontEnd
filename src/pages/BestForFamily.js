@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import CitySearchBar from "../components/CitySearchBar";
 import LocationCard from "../components/LocationCard";
 import styles from "../sass/home.module.scss";
+import city from "../sampleData/Cities.json";
 import font from "../sass/createacc.module.scss";
 import ViewMapButton from "../images/icons/ViewMapButton.svg";
 import FilterMapButton from "../images/icons/FilterMapButton.svg";
@@ -21,7 +22,9 @@ const BestForFamily = () => {
         </div>
       </div>
       <div className={styles.locationCardContainer}>
-        <LocationCard />
+        {city.map((city) => {
+          return <LocationCard city={city} key={city.id} />;
+        })}
       </div>
     </div>
   );
