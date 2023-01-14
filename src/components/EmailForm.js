@@ -3,6 +3,7 @@ import styles from "../sass/createacc.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import axios from "axios";
+import Cookies from "universal-cookie";
 
 const validate = (values) => {
   const errors = {};
@@ -19,6 +20,8 @@ const validate = (values) => {
 const EmailForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+
+  const cookie = new Cookies();
 
   const url = window.location.pathname;
 
@@ -55,7 +58,7 @@ const EmailForm = () => {
               username: values.email,
               password: values.password,
             },
-          }).then((res) => console.log(res.data));
+          }).then((res) => cookie.set("jwt_access", res.data, { path: "/" }));
           break;
         default:
           return "default";
