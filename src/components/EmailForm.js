@@ -45,7 +45,17 @@ const EmailForm = () => {
           }
           break;
         case "/login":
-          console.log("login");
+          axios({
+            method: "post",
+            url: "https://localhost:7108/api/JwtAuth/Authorize",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            data: {
+              username: values.email,
+              password: values.password,
+            },
+          }).then((res) => console.log(res.data));
           break;
         default:
           return "default";
