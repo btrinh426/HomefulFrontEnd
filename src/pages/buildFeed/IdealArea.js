@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import styles from "../../sass/createacc.module.scss";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const IdealArea = ({
   setIdealAreaChoices,
@@ -12,6 +13,8 @@ const IdealArea = ({
   idealAreaChoices,
 }) => {
   const [finalProfile, setFinalProfile] = useState();
+
+  const navigate = useNavigate();
 
   const combineProfileInfo = async () => {
     await setFinalProfile({
@@ -23,19 +26,30 @@ const IdealArea = ({
   };
 
   const handleSubmit = () => {
-    combineProfileInfo().then(() =>
-      axios({
-        method: "post",
-        url: "https://localhost:7108/api/Profiles",
-        data: finalProfile,
-      })
-    );
-    console.log("create account, successful");
+    combineProfileInfo();
   };
 
   const handleFormat = (event, newFormats) => {
     setIdealAreaChoices(newFormats);
   };
+
+  useEffect(() => {
+    if (finalProfile !== undefined) {
+      axios({
+        method: "post",
+        url: "https://localhost:7108/api/Profiles",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: finalProfile,
+      }).then((res) => {
+        if (res) {
+          navigate("/");
+          console.log(res.data, "response");
+        }
+      });
+    }
+  }, [finalProfile, navigate]);
 
   return (
     <>
@@ -50,34 +64,38 @@ const IdealArea = ({
         value={idealAreaChoices}
         onChange={handleFormat}
       >
-        <ToggleButton value="safety">
+        <ToggleButton value="safety" selected={false}>
           <button className={styles.selectedButton}>SAFETY</button>
         </ToggleButton>
-        <ToggleButton value="kidFriendly">
+        <ToggleButton value="kidFriendly" selected={false}>
           <button className={styles.selectedButton}>KID-FRIENDLY</button>
         </ToggleButton>
-        <ToggleButton value="jobOpportunites">
+        <ToggleButton value="jobOpportunites" selected={false}>
           <button className={styles.selectedButton}>JOB OPPORTUNITIES</button>
         </ToggleButton>
-        <ToggleButton value="petFriendly">
+        <ToggleButton value="petFriendly" selected={false}>
           <button className={styles.selectedButton}>PET-FRIENDLY</button>
         </ToggleButton>
-        <ToggleButton value="affordability">
-          <button className={styles.selectedButton}>AFFORDABILITY</button>
+        <ToggleButton value="affordability" selected={false}>
+          <button className={styles.selectedButton} selected={false}>
+            AFFORDABILITY
+          </button>
         </ToggleButton>
-        <ToggleButton value="easyCommute">
-          <button className={styles.selectedButton}>EASY COMMUTE</button>
+        <ToggleButton value="easyCommute" selected={false}>
+          <button className={styles.selectedButton} selected={false}>
+            EASY COMMUTE
+          </button>
         </ToggleButton>
-        <ToggleButton value="outdoorActivites">
+        <ToggleButton value="outdoorActivites" selected={false}>
           <button className={styles.selectedButton}>OUTDOOR ACTIVITIES</button>
         </ToggleButton>
-        <ToggleButton value="goodSchools">
+        <ToggleButton value="goodSchools" selected={false}>
           <button className={styles.selectedButton}>GOOD SCHOOLS</button>
         </ToggleButton>
-        <ToggleButton value="qualityOfLife">
+        <ToggleButton value="qualityOfLife" selected={false}>
           <button className={styles.selectedButton}>QUALITY OF LIFE</button>
         </ToggleButton>
-        <ToggleButton value="sizeOfCity">
+        <ToggleButton value="sizeOfCity" selected={false}>
           <button className={styles.selectedButton}>SIZE OF CITY</button>
         </ToggleButton>
       </ToggleButtonGroup>
