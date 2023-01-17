@@ -15,7 +15,7 @@ const LocationCard = ({ city, id }) => {
   const navigate = useNavigate();
 
   const handleLocationCard = (id) => {
-    navigate(`/areainfo/${id}`);
+    navigate(`/areainfo/${id}`, { state: { city } });
   };
 
   const handleLike = async () => {
@@ -39,7 +39,7 @@ const LocationCard = ({ city, id }) => {
         <div className={styles.titleContainer}>
           <div className={styles.bigFont}>{city.name}</div>
           <div className={styles.medFont}>{city.subTitle}</div>
-          <div className={styles.greenFont}>{city.rank}</div>
+          <div className={styles.greenFont}>{`${city.rank} For Families`}</div>
         </div>
         <div className={styles.contentContainer}>
           <div className={styles.content}>

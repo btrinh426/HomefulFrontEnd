@@ -1,9 +1,10 @@
+
 [
     {
         "id": 1111,
         "name": "Westpark",
         "subTitle": "Neighborhood in Irvine, CA",
-        "rank": "#1 For Families",
+        "rank": "#1",
         "user": "Parent",
         "content": "This place is incredibly safe! I have no regrets moving here ten years ago to start my family. The area is quiet and well-kept...",
         "stars": 4,
@@ -13,7 +14,7 @@
         "id": 2222,
         "name": "Turtle Rock",
         "subTitle": "Neighborhood in Irvine, CA",
-        "rank": "#2 For Families",
+        "rank": "#2",
         "user": "Parent",
         "content": "A nice neighborhood with lots of parks and trees! My kids go to a safe school and the community is closeknit. I've been living in Irvine, for nearly...",
         "stars": 5,
@@ -23,7 +24,7 @@
         "id": 3333,
         "name": "Woodbridge",
         "subTitle": "Neighborhood in Irvine, CA",
-        "rank": "#3 For Families",
+        "rank": "#3",
         "user": "User",
         "content": "Woodbridge is a super nice neighborhood with greate facilities and schools for K-12. A beautiful community college is also close to use",
         "stars": 4,
@@ -33,7 +34,7 @@
         "id": 4444,
         "name": "Oak Creek",
         "subTitle": "Neighborhood in Irvine, CA",
-        "rank": "#4 For Families",
+        "rank": "#4",
         "user": "Former Resident",
         "content": "This place was greate for us when we were raising our family. We moved when our kids were grown up but it's always going to be home for us.",
         "stars": 5,
