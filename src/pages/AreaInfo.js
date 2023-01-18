@@ -1,8 +1,10 @@
 import React from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { Rating } from "@mui/material";
+import Map from "../components/Map";
 import WoodbridgePhoto from "../images/WoodbridgeAreaInfo.svg";
 import LikeButton from "../images/buttons/LikeButton.svg";
+import GradeCard from "../images/GradeCard.svg";
 import styles from "../sass/areainfo.module.scss";
 
 const AreaInfo = () => {
@@ -30,6 +32,10 @@ const AreaInfo = () => {
             className={styles.greenFont}
           >{`${city.rank} best places for families to live in orange county`}</div>
         </div>
+        <img src={GradeCard} alt="gradeCard" />
+        <Map />
+        <div>What's Around {city.name}</div>
+        <div>Explore the area and discover nearby hotspots</div>
       </div>
     </>
   );
