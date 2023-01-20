@@ -96,31 +96,25 @@
             {
                 "name": "WOODBRIDGE CAFE",
                 "type": "Cafes",
-                "image": "image",
+                "image": "https://homeful-images.s3.us-west-1.amazonaws.com/images/hotspots/WoodbridgeCafe.svg",
                 "filterBy": "popular"
             },
             {
                 "name": "WOODBRIDGE PARK",
                 "type": "Parks",
-                "image": "image",
-                "filterBy": "parks"
+                "image": "https://homeful-images.s3.us-west-1.amazonaws.com/images/hotspots/WoodbridgePark.svg",
+                "filterBy": "popular"
             },
             {
                 "name": "IRVINE SPECTRUM",
-                "type": "Entertainment",
-                "image": "image",
-                "filterBy": "nightlife"
+                "type": "Shopping",
+                "image": "https://homeful-images.s3.us-west-1.amazonaws.com/images/hotspots/IrvineSpectrum.svg",
+                "filterBy": "popular"
             },            
             {
-                "name": "WOODBRIDGE CAFE",
-                "type": "Cafes",
-                "image": "image",
-                "filterBy": "dining"
-            },
-            {
-                "name": "WOODBRIDGE CAFE",
-                "type": "Cafes",
-                "image": "image",
+                "name": "ORANGE YOGA",
+                "type": "Fitness",
+                "image": "https://homeful-images.s3.us-west-1.amazonaws.com/images/hotspots/OrangeYoga.svg",
                 "filterBy": "popular"
             }
         ]
