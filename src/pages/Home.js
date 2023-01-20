@@ -1,6 +1,4 @@
 import React from "react";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 import styles from "../sass/home.module.scss";
 import HeroImage from "../images/hero_image.svg";
 import BestForFamily from "../images/BestForFamily.svg";
@@ -13,7 +11,6 @@ import GetPrepared from "../images/GetPrepared.svg";
 const Home = () => {
   return (
     <div className={styles.wrapper}>
-      <NavBar />
       <img src={HeroImage} alt="" />
       <div className={styles.tanContainer}>
         EXPLORE PLACES THAT WOULD MAKE YOU HAPPY
@@ -94,7 +91,6 @@ const Home = () => {
       <div>
         We have hope that you'll be happy with the new place you'll call home.
       </div>
-      <Footer />
     </div>
   );
 };

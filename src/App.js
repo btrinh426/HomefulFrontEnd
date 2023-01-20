@@ -1,4 +1,6 @@
 import Home from "./pages/Home";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import About from "./pages/About";
 import CreateAcc from "./pages/CreateAcc";
 import AreaInfo from "./pages/AreaInfo";
@@ -13,6 +15,7 @@ function App() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -23,6 +26,7 @@ function App() {
           <Route path="/bestforfamily" element={<BestForFamily />} />
           <Route path="/areainfo/:id" element={<AreaInfo />} />
         </Routes>
+        <Footer />
       </div>
     </div>
   );

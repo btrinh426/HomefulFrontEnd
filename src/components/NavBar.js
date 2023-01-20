@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../sass/navbar.module.scss";
 import MenuBar from "../images/buttons/MenuBar.svg";
 import Menu from "../components/Menu";
+import { ClickAwayListener } from "@mui/base";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,21 +18,25 @@ const NavBar = () => {
     }
   };
 
+  const handleClickAway = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className={styles.container}>
       logo
-      {isMenuOpen && (
-        <img
-          className={styles.menu}
-          onClick={handleMenu}
-          src={MenuBar}
-          alt="menu"
-        />
-      )}
+      <img
+        className={styles.menu}
+        onClick={handleMenu}
+        src={MenuBar}
+        alt="menu"
+      />
       {isOpen && (
-        <div>
-          <Menu />
-        </div>
+        <ClickAwayListener onClickAway={handleClickAway}>
+          <div className={styles.menuPop}>
+            <Menu setIsOpen={setIsOpen} />
+          </div>
+        </ClickAwayListener>
       )}
     </div>
   );

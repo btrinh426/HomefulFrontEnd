@@ -8,4 +8,10 @@
 
 .menu {
     cursor: pointer;
+    position: relative;
+}
+
+.menuPop {
+    position: absolute;
+    left: 269px;
 }

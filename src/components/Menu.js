@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../sass/menu.module.scss";
 
-const Menu = () => {
+const Menu = ({ setIsOpen }) => {
   const [placesToLiveOpen, setPlacesToLiveOpen] = useState(false);
   const [tipsGuidesOpen, setTipsGuidesOpen] = useState(false);
   const [aboutHomefulOpen, setAboutHomefulOpen] = useState(false);
@@ -11,11 +11,13 @@ const Menu = () => {
 
   const handleLogin = () => {
     navigate("/createaccount");
+    setIsOpen(false);
   };
 
   const handleBestFamilyClick = () => {
     navigate("/bestforfamily");
-  }
+    setIsOpen(false);
+  };
 
   const handlePlacesToLive = () => {
     if (placesToLiveOpen === false) {
@@ -63,7 +65,9 @@ const Menu = () => {
             <div className={styles.regularFont}>
               BEST FOR YOUNG PROFESSIONALS
             </div>
-            <div className={styles.regularFont} onClick={handleBestFamilyClick}>BEST FOR FAMILIES</div>
+            <div className={styles.regularFont} onClick={handleBestFamilyClick}>
+              BEST FOR FAMILIES
+            </div>
             <div className={styles.regularFont}>MOST PET-FRIENDLY</div>
             <div className={styles.regularFont}>BEST TO BUY A HOUSE</div>
             <div className={styles.regularFont}>HEALTH & OUTDOORS</div>

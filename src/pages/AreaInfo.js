@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { Rating } from "@mui/material";
-import Map from "../components/Map";
+// import Map from "../components/Map";
 import WoodbridgePhoto from "../images/WoodbridgeAreaInfo.svg";
 import LikeButton from "../images/buttons/LikeButton.svg";
 import GradeCard from "../images/GradeCard.svg";
