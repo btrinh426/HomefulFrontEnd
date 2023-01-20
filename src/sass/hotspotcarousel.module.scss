@@ -1,0 +1,29 @@
+.slider_container {
+    padding: 50px 0;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.text_bg p {
+    font-size: 21px;
+    margin-top: -9px;
+}
+
+.card {
+    margin: 8px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}

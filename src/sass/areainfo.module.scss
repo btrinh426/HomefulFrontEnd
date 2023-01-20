@@ -63,3 +63,17 @@
     color: #204219;
     text-transform: uppercase;
 }
+
+.filter {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
+    width: 100%;
+}
+
+.carousel {
+    width: 100%;
+}

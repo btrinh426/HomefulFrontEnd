@@ -11,7 +11,33 @@
         "hotspots": [
             {
                 "name": "WOODBRIDGE CAFE",
-                "type": "Cafes"
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "popular"
+            },
+            {
+                "name": "WOODBRIDGE PARK",
+                "type": "Parks",
+                "image": "image",
+                "filterBy": "parks"
+            },
+            {
+                "name": "IRVINE SPECTRUM",
+                "type": "Entertainment",
+                "image": "image",
+                "filterBy": "nightlife"
+            },            
+            {
+                "name": "WOODBRIDGE CAFE",
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "dining"
+            },
+            {
+                "name": "WOODBRIDGE CAFE",
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "popular"
             }
         ]
     },
@@ -27,7 +53,33 @@
         "hotspots": [
             {
                 "name": "WOODBRIDGE CAFE",
-                "type": "Cafes"
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "popular"
+            },
+            {
+                "name": "WOODBRIDGE PARK",
+                "type": "Parks",
+                "image": "image",
+                "filterBy": "parks"
+            },
+            {
+                "name": "IRVINE SPECTRUM",
+                "type": "Entertainment",
+                "image": "image",
+                "filterBy": "nightlife"
+            },            
+            {
+                "name": "WOODBRIDGE CAFE",
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "dining"
+            },
+            {
+                "name": "WOODBRIDGE CAFE",
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "popular"
             }
         ]
     },
@@ -43,7 +95,33 @@
         "hotspots": [
             {
                 "name": "WOODBRIDGE CAFE",
-                "type": "Cafes"
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "popular"
+            },
+            {
+                "name": "WOODBRIDGE PARK",
+                "type": "Parks",
+                "image": "image",
+                "filterBy": "parks"
+            },
+            {
+                "name": "IRVINE SPECTRUM",
+                "type": "Entertainment",
+                "image": "image",
+                "filterBy": "nightlife"
+            },            
+            {
+                "name": "WOODBRIDGE CAFE",
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "dining"
+            },
+            {
+                "name": "WOODBRIDGE CAFE",
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "popular"
             }
         ]
     },
@@ -59,7 +137,33 @@
         "hotspots": [
             {
                 "name": "WOODBRIDGE CAFE",
-                "type": "Cafes"
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "popular"
+            },
+            {
+                "name": "WOODBRIDGE PARK",
+                "type": "Parks",
+                "image": "image",
+                "filterBy": "parks"
+            },
+            {
+                "name": "IRVINE SPECTRUM",
+                "type": "Entertainment",
+                "image": "image",
+                "filterBy": "nightlife"
+            },            
+            {
+                "name": "WOODBRIDGE CAFE",
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "dining"
+            },
+            {
+                "name": "WOODBRIDGE CAFE",
+                "type": "Cafes",
+                "image": "image",
+                "filterBy": "popular"
             }
         ]
     }
