@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { Rating } from "@mui/material";
 // import Map from "../components/Map";
@@ -12,7 +12,39 @@ const AreaInfo = () => {
   let { id } = useParams();
   const location = useLocation();
   const city = location.state.city;
-  const hotspots = city.hotspots;
+
+  const [hotspots, setHotspots] = useState(city.hotspots);
+  const [filterHotspots, setFilterHotspots] = useState([]);
+
+  const handlePopularFilter = () => {
+    const popular = hotspots.filter(
+      (hotspot) => hotspot.filterBy === "popular"
+    );
+    setHotspots(popular);
+    console.log("clicked");
+  };
+  const handleDiningFilter = () => {
+    const dining = hotspots.filter((hotspot) => hotspot.filterBy === "dining");
+    setHotspots(dining);
+    console.log("clicked");
+  };
+  const handleNightlifeFilter = () => {
+    const nightlife = hotspots.filter(
+      (hotspot) => hotspot.filterBy === "nightlife"
+    );
+    setHotspots(nightlife);
+    console.log("clicked");
+  };
+  const handleParksFilter = () => {
+    const parks = hotspots.filter((hotspot) => hotspot.filterBy === "parks");
+    setHotspots(parks);
+    console.log("clicked");
+  };
+  const handleCafesFilter = () => {
+    const cafes = hotspots.filter((hotspot) => hotspot.filterBy === "cafes");
+    setHotspots(cafes);
+    console.log("clicked");
+  };
 
   return (
     <>
@@ -39,14 +71,14 @@ const AreaInfo = () => {
         <div>What's Around {city.name}</div>
         <div>Explore the area and discover nearby hotspots</div>
         <div className={styles.filter}>
-          <div>Popular</div>
-          <div>Dining</div>
-          <div>Nightlife</div>
-          <div>Parks</div>
-          <div>Cafes</div>
+          <div onClick={handlePopularFilter}>Popular</div>
+          <div onClick={handleDiningFilter}>Dining</div>
+          <div onClick={handleNightlifeFilter}>Nightlife</div>
+          <div onClick={handleParksFilter}>Parks</div>
+          <div onClick={handleCafesFilter}>Cafes</div>
         </div>
         <div className={styles.carousel}>
-          <HotspotCarousel cityHotspot={city.hotspots} />
+          <HotspotCarousel cityHotspot={hotspots} />
         </div>
       </div>
     </>
