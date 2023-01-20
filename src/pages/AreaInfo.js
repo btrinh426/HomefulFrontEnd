@@ -12,6 +12,7 @@ const AreaInfo = () => {
   let { id } = useParams();
   const location = useLocation();
   const city = location.state.city;
+  const hotspots = city.hotspots;
 
   return (
     <>
@@ -37,7 +38,16 @@ const AreaInfo = () => {
         {/* <Map /> */}
         <div>What's Around {city.name}</div>
         <div>Explore the area and discover nearby hotspots</div>
-        <HotspotCarousel />
+        <div className={styles.filter}>
+          <div>Popular</div>
+          <div>Dining</div>
+          <div>Nightlife</div>
+          <div>Parks</div>
+          <div>Cafes</div>
+        </div>
+        <div className={styles.carousel}>
+          <HotspotCarousel cityHotspot={city.hotspots} />
+        </div>
       </div>
     </>
   );
