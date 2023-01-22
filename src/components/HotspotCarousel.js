@@ -10,11 +10,6 @@ import "swiper/css/navigation";
 import "swiper/css";
 
 const HotspotCarousel = ({ cityHotspot }) => {
-  const [hotspots, setHotspots] = useState([]);
-
-  useEffect(() => {
-    setHotspots(cityHotspot);
-  });
   return (
     <div className={styles.slider_container}>
       <div className={styles.slider}>
@@ -38,7 +33,7 @@ const HotspotCarousel = ({ cityHotspot }) => {
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          {hotspots.map((city) => {
+          {cityHotspot.map((city) => {
             return (
               <SwiperSlide>
                 <HotspotCard hotspot={city} />

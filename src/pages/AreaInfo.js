@@ -12,38 +12,45 @@ const AreaInfo = () => {
   let { id } = useParams();
   const location = useLocation();
   const city = location.state.city;
+  const hotspots = city.hotspots;
 
-  const [hotspots, setHotspots] = useState(city.hotspots);
-  const [filterHotspots, setFilterHotspots] = useState([]);
+  const [filterHotspots, setFilterHotspots] = useState(city.hotspots);
 
-  const handlePopularFilter = () => {
-    const popular = hotspots.filter(
-      (hotspot) => hotspot.filterBy === "popular"
-    );
-    setHotspots(popular);
-    console.log("clicked");
-  };
-  const handleDiningFilter = () => {
-    const dining = hotspots.filter((hotspot) => hotspot.filterBy === "dining");
-    setHotspots(dining);
-    console.log("clicked");
-  };
-  const handleNightlifeFilter = () => {
-    const nightlife = hotspots.filter(
-      (hotspot) => hotspot.filterBy === "nightlife"
-    );
-    setHotspots(nightlife);
-    console.log("clicked");
-  };
-  const handleParksFilter = () => {
-    const parks = hotspots.filter((hotspot) => hotspot.filterBy === "parks");
-    setHotspots(parks);
-    console.log("clicked");
-  };
-  const handleCafesFilter = () => {
-    const cafes = hotspots.filter((hotspot) => hotspot.filterBy === "cafes");
-    setHotspots(cafes);
-    console.log("clicked");
+  const handleFilterClick = (e) => {
+    switch (e.target.id) {
+      case "popular":
+        const popular = hotspots.filter(
+          (hotspot) => hotspot.filterBy === "popular"
+        );
+        setFilterHotspots(popular);
+        break;
+      case "dining":
+        const dining = hotspots.filter(
+          (hotspot) => hotspot.filterBy === "dining"
+        );
+        setFilterHotspots(dining);
+        break;
+      case "nightlife":
+        const nightlife = hotspots.filter(
+          (hotspot) => hotspot.filterBy === "nightlife"
+        );
+        setFilterHotspots(nightlife);
+        break;
+      case "parks":
+        const parks = hotspots.filter(
+          (hotspot) => hotspot.filterBy === "parks"
+        );
+        setFilterHotspots(parks);
+        break;
+      case "cafes":
+        const cafes = hotspots.filter(
+          (hotspot) => hotspot.filterBy === "cafes"
+        );
+        setFilterHotspots(cafes);
+        break;
+      default:
+        return;
+    }
   };
 
   return (
@@ -71,14 +78,24 @@ const AreaInfo = () => {
         <div>What's Around {city.name}</div>
         <div>Explore the area and discover nearby hotspots</div>
         <div className={styles.filter}>
-          <div onClick={handlePopularFilter}>Popular</div>
-          <div onClick={handleDiningFilter}>Dining</div>
-          <div onClick={handleNightlifeFilter}>Nightlife</div>
-          <div onClick={handleParksFilter}>Parks</div>
-          <div onClick={handleCafesFilter}>Cafes</div>
+          <div id="popular" onClick={handleFilterClick}>
+            Popular
+          </div>
+          <div id="dining" onClick={handleFilterClick}>
+            Dining
+          </div>
+          <div id="nightlife" onClick={handleFilterClick}>
+            Nightlife
+          </div>
+          <div id="parks" onClick={handleFilterClick}>
+            Parks
+          </div>
+          <div id="cafes" onClick={handleFilterClick}>
+            Cafes
+          </div>
         </div>
         <div className={styles.carousel}>
-          <HotspotCarousel cityHotspot={hotspots} />
+          <HotspotCarousel cityHotspot={filterHotspots} />
         </div>
       </div>
     </>
