@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../sass/navbar.module.scss";
 import MenuBar from "../images/buttons/MenuBar.svg";
-import Menu from "../components/Menu";
+import Menu from "./Menu";
 import { ClickAwayListener } from "@mui/base";
 
 const NavBar = () => {

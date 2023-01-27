@@ -1,11 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../sass/menu.module.scss";
+import MenuBar from "../sampleData/Menu.json";
 
 const Menu = ({ setIsOpen }) => {
   const [placesToLiveOpen, setPlacesToLiveOpen] = useState(false);
   const [tipsGuidesOpen, setTipsGuidesOpen] = useState(false);
   const [aboutHomefulOpen, setAboutHomefulOpen] = useState(false);
+
+  const [menuBarData, setMenuBarData] = useState([]);
+
+
+  useEffect(() => {
+    setMenuBarData(MenuBar);
+  }, [])
+
+
+  //TODO:
+
+  const menuMap = () => {
+    menuBarData.map((item) => {
+      return (
+        <div onClick={() => handleMenuClick(item.name)}>{item.name}</div>
+      )
+    })
+  }
+
+  const handleMenuClick = (name) => {
+    
+  }
 
   const navigate = useNavigate();
 
@@ -20,7 +43,7 @@ const Menu = ({ setIsOpen }) => {
   };
 
   const handlePlacesToLive = () => {
-    if (placesToLiveOpen === false) {
+    if (!placesToLiveOpen) {
       setPlacesToLiveOpen(true);
     } else {
       setPlacesToLiveOpen(false);
@@ -44,6 +67,8 @@ const Menu = ({ setIsOpen }) => {
   };
 
   return (
+
+    //TODO: destructure styles
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <button className={styles.button} onClick={handleLogin}>
@@ -83,6 +108,7 @@ const Menu = ({ setIsOpen }) => {
             Tips & Guides
           </div>
         </div>
+        {/*TODO: since jsx element <div className={styles.regularFont}> is the same, create a separate component and map  */}
         {tipsGuidesOpen && (
           <>
             <div className={styles.regularFont}>GUIDE FOR HOMEBUYERS</div>
